@@ -5,7 +5,7 @@ const fs = require('fs');
 function UnusedPlugin(options) {
     this.sourceDirectories = options.directories || [];
     this.exclude = options.exclude || [];
-    this.outputFile = options.outputFile || false;
+    this.outputPath = options.outputPath || false;
     this.outputName = options.outputName || 'unusedFile.json'
 }
 
@@ -49,8 +49,8 @@ function output(files) {
     });
 
     process.stdout.write(chalk.green('\n*** Unused Plugin ***\n\n'));
-    if (this.outputFile) {
-        fs.writeFileSync(__dirname + this.outputName, JSON.stringify(allFiles, null, 2));
+    if (this.outputPath) {
+        fs.writeFileSync(this.outputPath + '/' + this.outputName, JSON.stringify(allFiles, null, 2));
     }
     return;
 }

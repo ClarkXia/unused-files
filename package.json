@@ -1,6 +1,6 @@
 {
   "name": "unused-files",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "a webpack plugin to find unused files",
   "main": "index.js",
   "scripts": {

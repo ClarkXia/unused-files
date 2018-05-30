@@ -1,4 +1,4 @@
-#### install	
+#### install
 
 ```js
 npm i --dev unused-files
@@ -15,7 +15,7 @@ module.exports.plugins = module.exports.plugins.concat([
     new UnusedPlugin({
       directories: [srcPath],
       exclude: [srcPath + '/images/', srcPath + '/i18n/'],
-      outputFile: true,
+      outputPath: srcPath,
       outputName: 'unused-files.json'
     })
 ]);
@@ -27,6 +27,6 @@ module.exports.plugins = module.exports.plugins.concat([
 
 `exclude` : array of exclude patterns when looking for unused files
 
-`outputFile` : decide if need to output a file, default to `false`
+`outputPath` : output path of a file contains unused messages, default to `false`
 
 `outputName`: set the file name output by plugin, default to `unusedFile.json`
